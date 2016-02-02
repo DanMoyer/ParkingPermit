@@ -1,0 +1,69 @@
+﻿@using WebApplicationAuthTest.Models
+@model WebApplicationAuthTest.Models.RegistrationLookupModel
+
+@{
+    ViewBag.Title = "ManageStudentRegistrationModel";
+}
+
+<h2>Student Registration Lookup</h2>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.KeywordSearch, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.KeywordSearch, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.KeywordSearch, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <div class="form-group">
+            <div class="radio-inline">
+                <label>@Html.RadioButtonFor(model => model.SearchBy, SearchByEnum.FacStaffId, new { id = "FacStaffID", @checked = true }) Fac/Staff ID</label>
+</div>
+
+            <div class="radio-inline">
+                <label>@Html.RadioButtonFor(model => model.SearchBy,  SearchByEnum.LastName, new { id = "LastName" }) Last Name</label>
+</div>
+
+            <div class="radio-inline">
+                <label>@Html.RadioButtonFor(model => model.SearchBy,  SearchByEnum.FirstName, new { id = "FirstName" }) First Name</label>
+</div>
+
+            <div class="radio-inline">
+                <label>@Html.RadioButtonFor(model => model.SearchBy, SearchByEnum.LicenseNumber, new { id = "LicenseNumber" }) License Number</label>
+</div>
+
+            <div class="radio-inline">
+                <label>@Html.RadioButtonFor(model => model.SearchBy, SearchByEnum.TagNumber,  new { id = "TagNumber" }) Tag Number</label>
+</div>
+        </div>
+
+
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Find" class="btn btn-default" /> 
+            <br />
+            <br />
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+
+@*
+    @Html.RadioButton("SearchBy", "FacStaffID", true, new {id = "FacStaffID"}) Fac/Staff ID
+
+    @Html.RadioButton("SearchBy", "LastName", new {id = "LastName"}) Last Name
+    @Html.RadioButton("SearchBy", "FirstName", new {id = "FirstName"}) First Name
+    @Html.RadioButton("SearchBy", "LicenseNumber", new {id = "LicenseNumber"}) License Number
+    @Html.RadioButton("SearchBy", "TagNumber", new {id = "TagNumber"}) Tag Number
+
+*@

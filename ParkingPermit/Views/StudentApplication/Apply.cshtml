@@ -1,0 +1,52 @@
+﻿@using WebApplicationAuthTest.Models
+@model WebApplicationAuthTest.Models.Student.StudentApplicationModel
+
+
+@{
+    ViewBag.Title = "Apply";
+}
+
+<h2>Apply for Student Parking Permit</h2>
+
+<p>
+    @** @Html.ActionLink("Register New", "Register") *@
+</p>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StudentId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.StudentId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.StudentId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.VehicleType, VehicleEnum.Vehicle) Vehicle
+                </label>
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.VehicleType, VehicleEnum.Bicycle) Bicycle
+                </label>
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.VehicleType, VehicleEnum.Motorcycle) Motorcycle
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Apply" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
