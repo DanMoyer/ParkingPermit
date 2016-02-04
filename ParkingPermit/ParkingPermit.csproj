@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/336b7a01-c74c-42c1-96d4-582b48753144/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/ParkingPermit</ApplicationInsightsResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -374,6 +375,7 @@
     <Content Include="Views\ItsAdmin\AddItsAdmin.cshtml" />
     <Content Include="Views\ItsAdmin\ChangeSecurityAdminPassword.cshtml" />
     <Content Include="Views\ItsAdmin\DeleteItsAdministrator.cshtml" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -390,6 +392,9 @@
     <EmbeddedResource Include="DataAccess\Migrations\AspNetSecurity\201602011448219_Initial.resx">
       <DependentUpon>201602011448219_Initial.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
