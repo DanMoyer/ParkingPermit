@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[StudentType]
+(
+	[Id] TINYINT NOT NULL PRIMARY KEY,
+	[StudentType] VARCHAR(20) NOT NULL,	
+	CONSTRAINT [PK_StudentType] PRIMARY KEY CLUSTERED ([Id] ASC)
+)
