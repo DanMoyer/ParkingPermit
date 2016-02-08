@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[FacStaff] (
-    [Id]        INT          IDENTITY (1, 1) NOT NULL,
-    [FirstName] VARCHAR (90) NULL,
-    [LastName]  VARCHAR (90) NULL,
+    [Id]        INT NOT NULL PRIMARY KEY,
+    [FirstName] NVARCHAR (30) NULL,
+    [LastName]  NVARCHAR (30) NULL,
     CONSTRAINT [PK_FacStaff] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

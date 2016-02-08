@@ -80,6 +80,10 @@
     <Build Include="dbo\Tables\StudentType.sql" />
     <Build Include="dbo\Tables\ClassYear.sql" />
     <Build Include="dbo\Tables\Location.sql" />
+    <Build Include="dbo\Tables\StudentLatest.sql" />
+    <Build Include="dbo\Tables\FacStaffLatest.sql" />
+    <Build Include="dbo\Tables\RegistrantChange.sql" />
+    <Build Include="dbo\Tables\StudentChange.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Scripts\PopulateClassYear.sql" />
@@ -89,5 +93,8 @@
     <None Include="dbo\Scripts\CX_VerifyStudent.sql" />
     <None Include="dbo\Scripts\CX_GetActiveStudents.sql" />
     <None Include="dbo\Scripts\CX_GetFactStaff.sql" />
+    <None Include="dbo\Scripts\MergeFacStaff.sql" />
+    <None Include="dbo\Scripts\MergeStudentFacStaff.sql" />
+    <None Include="dbo\Scripts\MergeStudent.sql" />
   </ItemGroup>
 </Project>
